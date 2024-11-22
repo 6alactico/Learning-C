@@ -13,7 +13,7 @@ int main () {
         scanf("%d", &values[i]);
     }
 
-    printf("Displaying integers: ");
+    printf("The 5 integers entered are ");
 
     // Prints elements of the array
     for(int i = 0; i < 5; ++i) { // For loop to print five inputs
