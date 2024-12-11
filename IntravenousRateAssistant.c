@@ -5,13 +5,13 @@
 // Displays the user menu, then inputs and returns as the function value the problem number selected.
 int get_problem(void);
 
-// Prompts the user to enter the data required for problem 1, and sends this data back to the calling module via output parameters.
+// Prompts the user to enter the data required for problem 1, sending this data back to the calling module via output parameters.
 void get_rate_drop_factor(float *rate, float *dropFactor);
 
-// Prompts the user to enter the data required for problem 3, and sends this data back to the calling module via output parameters.
+// Prompts the user to enter the data required for problem 3, sending this data back to the calling module via output parameters.
 void get_kg_rate_conc(float *rate, float *patientWeight, float *concentration);
 
-// Prompts the user to enter the data required for problem 4, and sends this data back to the calling module via output parameters.
+// Prompts the user to enter the data required for problem 4, sending this data back to the calling module via output parameters.
 void get_units_conc(float *rate, float *concentration);
 
 // Takes rate and drop factor as input parameters and returns drops/min (rounded to nearest whole drop) as function value.
@@ -28,7 +28,7 @@ float by_units(float rate, float concentration);
 
 int main()
 {
-    printf("INTRAVENOUS RATE ASSISTANT"); // Program name
+    printf("INTRAVENOUS RATE ASSISTANT");
     
 	float value, rate, dropFactor, hours, patientWeight, concentration;
 	int problem = 1;
@@ -54,7 +54,6 @@ int main()
             printf("The rate in milliliters per hour is %d.", (int) value);
 			break;
 		case 4:
-			// If user selects 4
             get_units_conc(&rate, &concentration);
             value = by_units(rate, concentration);
             printf("The rate in milliliters per hour is %d.", (int) value);
@@ -62,8 +61,7 @@ int main()
 	}
 }
 
-// Function Declarations
-int get_problem(void)
+int get_problem(void) 
 {
 	int problem;
 	printf("\n\nEnter the number of the problem you wish to solve.\n");
@@ -87,12 +85,12 @@ void get_rate_drop_factor(float *rate, float *dropFactor) {
 
 float fig_drops_min(float rate, float dropFactor)
 {
-	return ceil(rate*dropFactor/60);
+	return ceil(rate * dropFactor / 60);
 }
 
 float fig_ml_hr(float hours)
 {
-	return 1/hours*1000;
+	return 1 /hours * 1000;
 }
 
 void get_kg_rate_conc(float *rate, float *patientWeight, float *concentration) {
@@ -106,7 +104,7 @@ void get_kg_rate_conc(float *rate, float *patientWeight, float *concentration) {
 
 float by_weight(float rate, float weight, float concentration) 
 {
-    return ceil(rate*weight/concentration);
+    return ceil(rate * weight / concentration);
 }
 
 void get_units_conc(float *rate, float *concentration) {
@@ -119,6 +117,6 @@ void get_units_conc(float *rate, float *concentration) {
 
 float by_units(float rate, float concentration) 
 {
-    return ceil(rate/concentration);
+    return ceil(rate / concentration);
 }
 

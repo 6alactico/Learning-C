@@ -1,4 +1,4 @@
-// Tests function order by ordering three numbers
+// Create a program to test function order by ordering three numbers
 #include <stdio.h>
 
 void order(double *smp, double *lgp);
