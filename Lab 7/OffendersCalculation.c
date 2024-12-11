@@ -1,3 +1,4 @@
+/* Create a program to assist the State Justice Department calculate adult offenders' recidivism rate. */
 #include <stdio.h>
 
 int readData(FILE * input, int id[], int aMonth[], int aYear[], 
