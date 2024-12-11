@@ -1,7 +1,7 @@
+/* Create a program for a hospital supply company to calculate intravenous rates. */
 #include <stdio.h>
 #include <math.h>
 
-// Function Definitions
 // Displays the user menu, then inputs and returns as the function value the problem number selected.
 int get_problem(void);
 
